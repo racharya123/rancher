@@ -19,7 +19,7 @@ $(TARGETS): .dapper
 .PHONY: $(TARGETS)
 
 DOCKER_REPO ?= staging.docker.akamai.com/abattery-poc-test
-DOCKER_IMAGE ?= rancher/rancher:dev
+DOCKER_IMAGE ?= rancher/rancher:${VERSION}
 
 tag-and-push:
 	@docker images
