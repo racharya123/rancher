@@ -9,6 +9,7 @@ pipeline{
     stages {
         stage('Build') {
             steps {
+                sh 'make list-gomod-updates'
                 sh 'make'
             }
             }
