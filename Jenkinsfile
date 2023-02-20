@@ -9,5 +9,10 @@ pipeline{
                 sh 'make'
             }
             }
+         stage('Push') {
+             steps {
+                    sh 'make tag-and-push'
+              }
+             }
         }
 }
