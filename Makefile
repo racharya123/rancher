@@ -22,5 +22,6 @@ DOCKER_REPO ?= staging.docker.akamai.com/abattery-poc-test
 DOCKER_IMAGE ?= rancher/rancher:dev
 
 tag-and-push:
+	@docker images
 	@docker tag $(DOCKER_IMAGE) $(DOCKER_REPO)/$(DOCKER_IMAGE)
 	@docker push $(DOCKER_REPO)/$(DOCKER_IMAGE)
