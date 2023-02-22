@@ -12,15 +12,15 @@ GIT_TAG=${DRONE_TAG:-$(git tag -l --contains HEAD | head -n 1)}
 LAST_TAG=${GIT_TAG:-'v0.0.0'}
 
 if [[ -z "$DIRTY" && -n "$GIT_TAG" ]]; then
-    VERSION='ngab-poc'
+    VERSION=$GIT_TAG
 else
-    VERSION='ngab-poc'
+    VERSION="${COMMIT}${DIRTY}"
 fi
 
 if [ -z "$DRONE_TAG" ] && [ -n "$DRONE_COMMIT" ] && [ -n "$DRONE_BRANCH" ]; then
-    APP_VERSION='ngab-poc'
+    APP_VERSION=${DRONE_BRANCH/release\//}-${DRONE_COMMIT}-head
 else
-    APP_VERSION='ngab-poc'
+    APP_VERSION=$VERSION
 fi
 
 # Chart tag.
