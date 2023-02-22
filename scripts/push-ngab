@@ -1,9 +1,0 @@
-#!/bin/bash
-set -e
-
-source $(dirname $0)/version
-
-source package-env
-
-docker tag ${IMAGE} staging.docker.akamai.com/abattery-poc-test/rancher/rancher:ngab
-docker push staging.docker.akamai.com/abattery-poc-test/rancher/rancher:ngab
