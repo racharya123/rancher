@@ -19,7 +19,7 @@ $(TARGETS): .dapper
 .PHONY: $(TARGETS)
 
 DOCKER_REPO ?= 'staging.docker.akamai.com/abattery-poc-test'
-DOCKER_IMAGE ?= 'rancher/rancher:ngab-poc'
+DOCKER_IMAGE ?= 'rancher/rancher:ngab-poc_arm64'
 
 tag-and-push:
 	@docker images
